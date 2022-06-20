@@ -17,6 +17,7 @@
 	<component name="DisplayListElement" class="ru.runa.wf.web.ftl.component.DisplayListElement" />
 	<component name="DisplayMapElement" class="ru.runa.wf.web.ftl.component.DisplayMapElement" />
 	<component name="DisplayVariable" class="ru.runa.wf.web.ftl.component.DisplayVariable" />
+	<component name="DisplayDateVariable" class="ru.runa.wf.web.ftl.component.DisplayDateVariable" />
 	<component name="EditLinkedLists" class="ru.runa.wf.web.ftl.component.EditLinkedLists" />
 	<component name="GroupMembers" class="ru.runa.wf.web.ftl.component.GroupMembers" />
 	<component name="InputVariable" class="ru.runa.wf.web.ftl.component.InputVariable" />
