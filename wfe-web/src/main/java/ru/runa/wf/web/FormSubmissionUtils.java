@@ -159,13 +159,12 @@ public class FormSubmissionUtils {
 
     public static Object extractVariable(HttpServletRequest request, Map<String, ? extends Object> userInput, VariableDefinition variableDefinition,
             Map<String, String> errors) throws Exception {
-        LocalDate date = LocalDate.now();
         VariableFormat format = FormatCommons.create(variableDefinition);
         HttpFormToVariableValue httpFormToVariableValue = new HttpFormToVariableValue(userInput, new DelegateExecutorLoader(Commons.getUser(request
                 .getSession())));
         Object result = format.processBy(httpFormToVariableValue, variableDefinition);
         errors.putAll(httpFormToVariableValue.getErrors());
-        return date + " " + result;
+        return result;
     }
 
     private static Map<String, UploadedFile> getUserInputFiles(HttpServletRequest request) {

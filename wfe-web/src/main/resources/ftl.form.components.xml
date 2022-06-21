@@ -21,6 +21,7 @@
 	<component name="EditLinkedLists" class="ru.runa.wf.web.ftl.component.EditLinkedLists" />
 	<component name="GroupMembers" class="ru.runa.wf.web.ftl.component.GroupMembers" />
 	<component name="InputVariable" class="ru.runa.wf.web.ftl.component.InputVariable" />
+	<component name="InputDateVariable" class="ru.runa.wf.web.ftl.component.InputDateVariable" />
 	<component name="MultiLanguageExample" class="ru.runa.wf.web.ftl.component.MultiLanguageExample" />
 	<component name="DisplayMultipleSelectInList" class="ru.runa.wf.web.ftl.component.DisplayMultipleSelectInList" />
 	<component name="MultipleSelectFromList" class="ru.runa.wf.web.ftl.component.MultipleSelectFromList" />
