@@ -1,9 +1,16 @@
 package ru.runa.wf.web.ftl.component;
 
+import com.google.common.collect.Maps;
 import ru.runa.wfe.commons.ftl.FormComponent;
+import ru.runa.wfe.commons.ftl.FormComponentSubmissionHandler;
+import ru.runa.wfe.form.Interaction;
+import ru.runa.wfe.var.VariableDefinition;
 import ru.runa.wfe.var.dto.WfVariable;
 
-public class InputDateVariable extends FormComponent {
+import java.time.LocalDate;
+import java.util.Map;
+
+public class InputDateVariable extends FormComponent implements FormComponentSubmissionHandler {
     private static final long serialVersionUID = 1L;
 
     @Override
@@ -14,4 +21,19 @@ public class InputDateVariable extends FormComponent {
         return ViewUtil.wrapInputVariable(variable, componentHtml);
     }
 
+    @Override
+    public Map<String, ? extends Object> extractVariables(
+            Interaction interaction,
+            VariableDefinition variableDefinition,
+            Map<String, ?> userInput,
+            Map<String, String> errors) throws Exception
+    {
+        Map<String, String> map = Maps.newHashMap();
+        Object rawVariable = userInput.get(variableDefinition.getName());
+        LocalDate date = LocalDate.now();
+        String[] variable = (String[])rawVariable;
+        String variableAndDate = date + " " + variable[0];
+        map.put(getVariableNameForSubmissionProcessing(), variableAndDate);
+        return map;
+    }
 }

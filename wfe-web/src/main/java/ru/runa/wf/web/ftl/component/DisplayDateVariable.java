@@ -15,10 +15,11 @@ public class DisplayDateVariable extends FormComponent {
         WfVariable variable = variableProvider.getVariableNotNull(variableName);
         String componentHtml;
         LocalDate date = LocalDate.now();
+        String variableValue = variableProvider.getValue(variableName).toString();
         if (componentView) {
             componentHtml = ViewUtil.getComponentOutput(user, webHelper, variableProvider.getProcessId(), variable) + " " + date;
         } else {
-            componentHtml = ViewUtil.getOutput(user, webHelper, variableProvider.getProcessId(), variable) + " " + date;;
+            componentHtml = ViewUtil.getOutput(user, webHelper, variableProvider.getProcessId(), variable) + " " + date;
         }
         return ViewUtil.wrapDisplayVariable(variable, componentHtml);
     }
